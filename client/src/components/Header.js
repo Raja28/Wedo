@@ -69,11 +69,11 @@ export const Header = () => {
                                     </div>) :
                                         (
                                             <div className='d-flex gap-3'>
-                                                <div>
+                                                {/* <div>
                                                     <Link href={"/login"} className='btn fw-semibold btn-outline-dark'>
                                                         Login
                                                     </Link>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         )
                                 }
