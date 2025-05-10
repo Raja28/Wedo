@@ -9,7 +9,7 @@ export default async function deleteTaskHandler(taskId, dispatch) {
         const resp = await dispatch(deleteTask({ taskId })).unwrap()
         if (resp?.success) {
             const user = JSON.parse(sessionStorage.getItem("user"))
-            user.tasks = resp?.tasks?.length > 0 ? resp?.tasks?.length : []
+            user.tasks = resp?.tasks?.length > 0 ? resp?.tasks : []
             user.tasksCreated = resp?.tasksCreated?.length > 0 ? resp?.tasksCreated : []
             sessionStorage.setItem("user", JSON.stringify(user))
             toast.success("Task deleted")
