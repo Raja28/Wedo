@@ -23,13 +23,15 @@ const priorityList = [
 ]
 const _status = "loading"
 
-export default function OverDue(){
-    <Suspense>
-        <OverDueComponent />
-    </Suspense>
+export default function OverDue() {
+    return (
+        <Suspense>
+            <OverDueComponent />
+        </Suspense>
+    )
 }
 
-const OverDueComponent = ()=> {
+const OverDueComponent = () => {
 
     const params = useParams();
     const searchParams = useSearchParams()
