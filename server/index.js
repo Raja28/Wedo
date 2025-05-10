@@ -3,7 +3,7 @@ const app = express()
 app.use(express.json())
 const cors = require('cors')
 app.use(cors({
-    origin: "*",
+    origin: "https://wedo-server.vercel.app",
     credentials: true
 }))
 require('dotenv').config()
