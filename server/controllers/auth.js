@@ -138,7 +138,7 @@ exports.login = async (req, res) => {
             })
         }
 
-        const userExist = await User.findOne({ email })
+        const userExist = await User.findOne({ email: email })
             .populate({
                 path: "tasks",
                 options: { sort: { createdAt: -1 } },
