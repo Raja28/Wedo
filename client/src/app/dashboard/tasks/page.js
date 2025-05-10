@@ -27,9 +27,12 @@ const priorityList = [
 const _status = "loading"
 
 export default function Tasks() {
-    <Suspense>
-        <TasksComponent />
-    </Suspense>
+    return (
+        <Suspense>
+            <TasksComponent />
+        </Suspense>
+    )
+
 }
 
 const TasksComponent = () => {
@@ -108,7 +111,7 @@ const TasksComponent = () => {
     }
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <>
             <ProtectedRoute>
                 <section className="container border">
                     <h2 className=" text-center my-2">Tasks</h2>
@@ -365,7 +368,8 @@ const TasksComponent = () => {
                     </div>
                 </div>
             </ProtectedRoute >
-        </Suspense>
+        </>
+
     )
 }
 
