@@ -23,9 +23,11 @@ const priorityList = [
 const _status = "loading"
 
 export default function TaskCreated() {
-    <Suspense>
-        <TaskCreatedComponent />
-    </Suspense>
+    return (
+        <Suspense>
+            <TaskCreatedComponent />
+        </Suspense>
+    )
 }
 
 const TaskCreatedComponent = () => {
