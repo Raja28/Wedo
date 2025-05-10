@@ -1,4 +1,4 @@
-# 🧹 WeDo - Team Task Management System
+# 📋 WeDo - Team Task Management System
 
 WeDo is a collaborative task management web application designed to help teams assign, track, and manage tasks efficiently. Built with a modern tech stack, it supports secure authentication, task CRUD operations, real-time notifications, and intelligent dashboards.
 
