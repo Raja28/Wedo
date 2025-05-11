@@ -109,7 +109,7 @@ const TaskCreatedComponent = () => {
         <ProtectedRoute>
             <Suspense fallback={<div>Loading...</div>}>
                 <section className="container ">
-                    <h2 className=" text-center ">Tasks Created</h2>
+                    <h2 className=" text-center my-2">Tasks Created</h2>
                     <div className="d-flex gap-2 justify-content-end align-items-center ">
                         <p className=" m-0">Filter by:</p>
                         <select className="form-select form-select-sm"
