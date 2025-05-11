@@ -12,8 +12,6 @@ export const sendOTP = createAsyncThunk('sendOTP/posts', async (email, { rejectW
         const resp = await axios.post(SEND_OTP_API, { email });
         return resp.data
     } catch (error) {
-
-        toast.error(error.response?.data?.message)
         return rejectWithValue(error.response?.data?.message)
     }
 })
@@ -21,15 +19,12 @@ export const sendOTP = createAsyncThunk('sendOTP/posts', async (email, { rejectW
 export const signup = createAsyncThunk("signup.posts", async (data, { dispatch, rejectWithValue }) => {
     try {
         const resp = await axios.post(USER_SIGNUP_API, data)
-        if (resp?.data?.success) {
-            toast.success("Signup successful")
-        }
-        dispatch(setSignUpData(resp?.data?.user))
+
+        dispatch(setUserData(resp?.data?.user))
         dispatch(setToken(resp?.data?.token))
         return resp?.data
     } catch (error) {
         console.log(error);
-        toast.error(error?.response.data.message)
         return rejectWithValue(error?.response.data.message)
     }
 })
