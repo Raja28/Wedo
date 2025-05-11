@@ -133,13 +133,13 @@ export default function Dashboard() {
                                     <Link href={`/dashboard/tasks`} className={`card w-100 h-100 text-decoration-none `} style={{ cursor: "pointer", }}>
                                         <div className="card-body text-center d-flex-column  flex justify-content-center align-items-center">
                                             <p className="card-title fw-semibold">Task</p>
-                                            <p className="fw-semibold">{user?.tasks.length}</p>
+                                            <p className="fw-semibold">{user?.tasks?.length}</p>
                                         </div>
                                     </Link>
                                     <Link href={`/dashboard/created`} className={`card w-100 h-100 text-decoration-none `} style={{ cursor: "pointer", }}>
                                         <div className="card-body text-center d-flex-column  flex justify-content-center align-items-center">
                                             <p className="card-title fw-semibold">Created</p>
-                                            <p className="fw-semibold">{user?.tasksCreated.length}</p>
+                                            <p className="fw-semibold">{user?.tasksCreated?.length}</p>
                                         </div>
                                     </Link>
                                     <Link href={`/dashboard/overdue`} className={`card w-100 h-100 text-decoration-none `} style={{ cursor: "pointer", }}>
