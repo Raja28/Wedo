@@ -18,6 +18,9 @@ export default function VerifyEmail() {
     useEffect(() => {
         const data = JSON.parse(sessionStorage.getItem("signUpData"))
         dispatch(setUserData(data))
+        if (!data) {
+            window.location.href = "/login"
+        }
     }, [status])
 
     async function reSendOTPHandler() {
@@ -27,7 +30,7 @@ export default function VerifyEmail() {
                 toast.success("OTP sent")
             }
         } catch (error) {
-            console.error("Error sending OTP:", error);
+            console.log("Error sending OTP:", error);
             const message = error || "Failed to send OTP. Please try again.";
             toast.error(message);
 
@@ -45,7 +48,7 @@ export default function VerifyEmail() {
             const resp = await dispatch(signup(user)).unwrap();
             if (resp?.success) {
                 sessionStorage.setItem("token", resp?.token)
-                sessionStorage.setItem("user", JSON.parse(resp?.user))
+                sessionStorage.setItem("user", JSON.stringify(resp?.user))
                 sessionStorage.removeItem("signUpData")
                 toast.success("Signup successful")
                 router.push("/dashboard");
@@ -54,8 +57,8 @@ export default function VerifyEmail() {
             }
 
         } catch (error) {
-            console.error("Error signing up:", error);
-            const message = error?.message || "Failed to signup. Please try again.";
+            console.log("Error signing up:", error);
+            const message = error || "Failed to signup. Please try again.";
             toast.error(message);
         }
     }
