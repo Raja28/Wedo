@@ -48,7 +48,6 @@ const TaskCreatedComponent = () => {
     const closeModalBtn = useRef(null);
 
     useEffect(() => {
-        // fetchData()
 
         let taskIndex;
         taskIndex = user?.tasks?.findIndex(task => task._id === updateTaskId);
@@ -62,8 +61,6 @@ const TaskCreatedComponent = () => {
         getUserList()
 
         if (status === "success") {
-            // setTaskData(null)
-
             setEdit(false)
         }
 
@@ -101,8 +98,6 @@ const TaskCreatedComponent = () => {
 
     function clearFilterHandler() {
         const newParams = new URLSearchParams(searchParams.toString())
-        // console.log(newParams)
-        // newParams.clear()
         router.push(window.location.pathname);
     }
 
@@ -113,7 +108,7 @@ const TaskCreatedComponent = () => {
     return (
         <ProtectedRoute>
             <Suspense fallback={<div>Loading...</div>}>
-                <section className="container border">
+                <section className="container ">
                     <h2 className=" text-center ">Tasks Created</h2>
                     <div className="d-flex gap-2 justify-content-end align-items-center ">
                         <p className=" m-0">Filter by:</p>
@@ -139,6 +134,7 @@ const TaskCreatedComponent = () => {
                         </select>
                         <p onClick={clearFilterHandler} className="text-secondary m-0" style={{ cursor: "pointer" }}>Clear</p>
                     </div>
+                    <hr my-2 />
                 </section>
 
                 <section className="container">
@@ -207,7 +203,7 @@ const TaskCreatedComponent = () => {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="addTaskModalLabel">Add Task</h1>
+                                <h1 className="modal-title fs-5" id="addTaskModalLabel">Add Details</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
